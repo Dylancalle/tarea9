@@ -29,5 +29,14 @@ describe("BowlingGame", () => {
         game.calcularscore();
         expect(game.getscore()).toEqual(20);
     });
+    it("deberia cuando el primer roll es 10, siendo el segundo 0, que el frame tome dos roll siguientes", () => { 
+        const game = new Game();
+        game.rolls[0]=10;
+        game.rolls[1]=0;
+        game.rolls[2]=4;
+        game.rolls[3]=4;
+        game.calcularscore();
+        expect(game.getscore()).toEqual(26);
+    });
 });
     

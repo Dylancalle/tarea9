@@ -11,7 +11,7 @@ class Game {
     }
   llenar(){
       for (let i = 0; i < 20; i++) {
-          this.rolls[i]=i;
+          this.rolls[i]=1;
       }
   }
   calcularscore(){
@@ -21,6 +21,16 @@ class Game {
           if(this.rolls[i]+this.rolls[i+1]==10 && this.rolls[i]!=10)
           {
             this.score+=this.rolls[i+2];
+          }
+          if(this.rolls[i]==10)
+          {
+            this.score+=this.rolls[i+2];
+            if(this.rolls[i+2]==10)
+            {
+              this.score+=this.rolls[i+4];
+            }else{
+              this.score+=this.rolls[i+3];
+            }
           }
       }
       
