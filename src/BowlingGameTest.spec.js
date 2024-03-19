@@ -38,5 +38,16 @@ describe("BowlingGame", () => {
         game.calcularscore();
         expect(game.getscore()).toEqual(26);
     });
+    it("deberia cuando el penultimo y ultimo roll suman 10, tendran solo un tiro adicional", () => { 
+        const game = new Game();
+        game.rolls[18]=9;
+        game.rolls[19]=1;
+        if(game.rolls[18]+ game.rolls[19]==10)
+        {
+            game.rolls[20]=7;
+        }
+        game.calcularscore();
+        expect(game.getscore()).toEqual(17);
+    });
 });
     
